@@ -5,7 +5,35 @@
     <link>https://vision14.github.io/tags/</link>
     <description>Recent content in Tags on My New Hugo Site</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://vision14.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Wed, 05 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://vision14.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>about-me</title>
+      <link>https://vision14.github.io/tags/about-me/</link>
+      <pubDate>Wed, 05 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://vision14.github.io/tags/about-me/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>coding</title>
+      <link>https://vision14.github.io/tags/coding/</link>
+      <pubDate>Wed, 05 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://vision14.github.io/tags/coding/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>website</title>
+      <link>https://vision14.github.io/tags/website/</link>
+      <pubDate>Wed, 05 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://vision14.github.io/tags/website/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>index</title>
       <link>https://vision14.github.io/tags/index/</link>

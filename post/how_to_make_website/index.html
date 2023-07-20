@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <title>
+How did I make and publish this website? | poojan.vyas
+</title>
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="generator" content="Hugo 0.114.0">
+
+
+<link rel="canonical" href="https://vision14.github.io/post/how_to_make_website/" >
+<link href="/sass/main.min.06792ae1cac5c6b83a6102a2d5f9a95f51d55854bfee24452519493cddc56918.css" rel="stylesheet">
+
+
+
+</head>
+
+<body>
+
+    <div class="flexWrapper">
+        <header class="headerWrapper">
+    <div class="header">
+        <div>
+            <a href="https://vision14.github.io/">
+                <span class="terminal">poojan.vyas ~ $</span>
+            </a>
+        </div>
+        <input class="side-menu" type="checkbox" id="side-menu"/>
+        <label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
+        <nav class="headerLinks">
+            <ul>
+                
+                <li>
+                    <a href="https://vision14.github.io/about" title="" >
+                        ~/about</a>
+                </li>
+                
+                <li>
+                    <a href="https://vision14.github.io/posts" title="" >
+                        ~/posts</a>
+                </li>
+                
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+        <div class="content">
+            <main class="main">
+                
+<div class="postWrapper">
+    <h1>How did I make and publish this website?</h1>
+    
+    <section class="postMetadata">
+        <dl>
+            
+                
+<dt>tags</dt>
+<dd><span></span>
+    <a href="/tags/about-me/">#about-me</a><span></span>
+    <a href="/tags/website/">#website</a><span></span>
+    <a href="/tags/coding/">#coding</a></dd>
+            
+            
+            
+            
+                <dt>published</dt>
+                
+                <dd><time datetime="2023-07-05">July 5, 2023</time></dd>
+            
+            
+                <dt>reading time</dt>
+                <dd>8 minutes</dd>
+            
+        </dl>
+    </section>
+    
+    <div>
+        <p>A couple of weeks ago, I was working on a problem to create a time-series forecasting model using seasonal decomposition. However, I did not know much about seasonal decomposition using pandas. So, my first thought was to read some articles. That&rsquo;s where I came across an <a href="https://mins.space/blog/2020-07-30-forecasting-through-decomposition/">article</a> from <a href="https://mins.space/">Min</a>. My first reaction about the article wasn&rsquo;t about the content on time series decomposition but about the website and how minimalistic it is. I then saw that Min used Hugo to develop the website (about which I had zero knowledge). Being a machine learning researcher, I do not have a lot of expertise with website development and deployment. One of the reasons why I have prolonged the idea of making my own website was because I didn&rsquo;t want to work with HTML and CSS as those things can be quite tricky to work with (especially CSS) if you are not familiar with them.</p>
+<p>Turns out, Hugo is an open-source site-generator that can create websites using markdown files (something that I use on a daily basis). In other words, each webpage of your website can be created using a markdown file instead of using HTML+CSS+JS. Basically, what Hugo does is, it takes the content of a markdown file and wraps it around HTML+CSS+JS code using its predefined themes. If you don&rsquo;t know what a markdown file is then it is a specific type of file format that developers use to create documentation around their projects (usually, README.md file), so you can think of it as a text file but with a little bit of syntax added into it to incorporate text-editing, tables, images, videos etc. That&rsquo;s where I decided that I will create my own website using Hugo. But the next question was, where would I deploy it? Because it requires money to buy a domain name and deploy it on a server. Long story short, you can deploy your (static) website on GitHub Pages without any cost. Hugo also has deployment support for GitHub Pages so everything turned out pretty convenient for me in the end.</p>
+<p>So, in this article, I will try to summarize the whole process that I went through to create this website into easy-to-follow steps. However, it will be helpful if you have knowledge about git commands, GitHub repositories and markdown file syntaxes. But if you don&rsquo;t, then check out following links and come back to this article as it will become a little easier to follow:</p>
+<ul>
+<li><a href="https://rogerdudler.github.io/git-guide/">git - The Simple Guide</a></li>
+<li><a href="https://product.hubspot.com/blog/git-and-github-tutorial-for-beginners">An Intro to Git and GitHub for Beginners</a></li>
+<li><a href="https://www.wikihow.com/Create-an-Account-on-GitHub">How to create a GitHub account</a></li>
+<li><a href="https://www.markdownguide.org/cheat-sheet/">Markdown Cheat Sheet</a></li>
+</ul>
+<h2 id="1-installation">1. Installation</h2>
+<p>First, we need to install the required packages and software. In this article I will show the installation process for macOS but I will link documentation for Windows and Linux installations whenever necessary. The first required package to be install is hugo itself. If you already have Homebrew installed on your mac, you can install hugo by running the following command in terminal:</p>
+<pre tabindex="0"><code>brew install hugo
+</code></pre><p>If you don&rsquo;t have Homebrew, I highly recommend <a href="https://brew.sh/">installing Homebrew</a> as the process of installing packages and softwares (not just Hugo) becomes really easy for you. For Windows and Linux users, <a href="https://gohugo.io/installation/">this document</a> will be helpful to install hugo on your machine. Now, if you are on a mac, you may not need to install git if you are using Mavericks (10.9) or above as in the latest versions of macOS, git is pre-installed in your machine. However, if you don&rsquo;t have git installed on your machine (any OS), you can follow their <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">official guide</a> to install it. Once you have these two things installed, you can start working on your website.</p>
+<h2 id="2-creating-website">2. Creating Website</h2>
+<p>First, we need to create our hugo project. Open terminal and navigate to your preferred directory using following command:</p>
+<pre tabindex="0"><code>cd ~/Desktop/my_directory
+</code></pre><p>Once you are inside your directory type in the following command to create your hugo project:</p>
+<pre tabindex="0"><code>hugo new site my_website
+</code></pre><p>Here, the name of your project will be &ldquo;my_website&rdquo; and you can change it to whatever you wish it to be called (don&rsquo;t worry, nobody will be able to see this name as it will be local for your machine). This command basically creates all the necessary files to develop your website inside &ldquo;my_website&rdquo; directory. However, we do not need to understand the functionality of all the directories (but if you wish to understand them all, watch this <a href="https://youtu.be/ZFL09qhKi5I?t=271">YouTube Tutorial</a>) as we will use only the following directories:</p>
+<ul>
+<li>/content: Used for storing you markdown files, in other words, your website pages will be stored in this folder as markdown files.</li>
+<li>/static: Used for storing static files like images, videos, fonts etc.</li>
+<li>/themes: Used for storing the theme of your website.</li>
+<li>/hugo.toml: A configuration file used for defining your homepage</li>
+</ul>
+<p>Now, you can select a theme of your liking from <a href="https://themes.gohugo.io/">hugo&rsquo;s themes library</a>. Once you have selected a theme of your liking, just click on the theme, which will take you to that theme&rsquo;s homepage and press Download. This will download a zip file containing all the files for your theme, unzip them into a directory and copy + paste the directory under:</p>
+<p><code>~/Desktop/my_directory/my_website/themes/</code></p>
+<p>The theme that I am using for this website is called <a href="https://themes.gohugo.io/themes/hugo-theme-nightfall/">Nightfall</a>. At the end, the directory structure of your project should look like this:</p>
+<pre tabindex="0"><code>my_website
+│───archetypes
+│   └───default.md
+│───assets
+│───content
+│───data
+│───hugo.toml
+│───layout
+│───static
+│───themes
+│   └───nightfall
+</code></pre><p>Now open the hugo.toml file under /my_website directory and this line: theme = &rsquo;nightfall&rsquo; or open a terminal at /my_website directory and run the following command (here, replace nightfall with the name of your theme):</p>
+<pre tabindex="0"><code>cd my_website
+echo &#34;theme = &#39;nightfall&#39;&#34; &gt;&gt; hugo.toml
+</code></pre><p>This line will tell Hugo to use the &rsquo;nightfall&rsquo; theme from the themes folder. Which means, you can download tons of themes under the /themes directory and just change the theme name inside the hugo.toml file to change the theme of your website. If you have noticed, a lot of directories under /my_website and /nightfall are similar. That is because Hugo will by default use the configurations and content of nightfall but we can override them by changing the same file under /my_website. In other words, the first priority of configurations will be given to /my_website directory but if something is not defined there then that same thing will be fetched from /nightfall directory. At this point, we have our website ready and we can test how it looks by opening a terminal at /my_website and running the following command:</p>
+<pre tabindex="0"><code>hugo server
+</code></pre><p>This will create a localhost server where we will be able to see the changes made to our website (NOTE: Do not close the terminal as it will also stop the localhost server). Now, open a web browser and type http://localhost:1313/ to open your website. The website is ready but it lacks content. To mitigate that, we will create a markdown file called about.md under /content folder by using following commands:</p>
+<pre tabindex="0"><code>cd content
+touch about.md
+</code></pre><p>Now inside this markdown file you can write anything about yourself as such:</p>
+<pre tabindex="0"><code>+++
+title = &#34;About&#34;
+showMetadata = false
++++
+Welcome to my website, my name is Poojan Vyas and I am a computer scientist.
+</code></pre><p>The thing inside three plus signs is the meta-data about your page, where title is the name of your webpage, showMetadata is a flag that defines whether to display your meta-data in the webpage or not (true for yes and false for no). You can write anything underneath that section and it will be printed as content on your “about” web page. Now that we have created an about page, we need to put a link to it on our homepage so that people can come to our website&rsquo;s homepage and then navigate to the about web page. To do so, we will add the following lines in our hugo.toml file under /my_website directory:</p>
+<pre tabindex="0"><code>[menu]
+  [[menu.header]]
+    name = &#34;about&#34;
+    weight = 1
+    url = &#34;about&#34;
+</code></pre><p>Here, menu.header defines the header of your homepage and by writing the above three lines under that, we created a link which people can click to go to the newly created “about” web page. We can test this by saving all the changes and refreshing the http://localhost:1313/ page. An option for about should pop-up at the top, which should lead to a new web page when clicked. You can follow this procedure and create as many webpages as you like. Now, before deploying our website we will make one final change to our hugo.toml file by adding the following line:</p>
+<pre tabindex="0"><code>baseURL = &#39;https://github_username.github.io/&#39;
+</code></pre><p>This line defines the URL of your deployed website (the link that you can share with your friends or put in your social network account bio). Here, &ldquo;github_username&rdquo; will be the username you used to create your GitHub profile. If you have purchased your own domain name like <a href="https://www.my_website.com">https://www.my_website.com</a> then you can put that here instead of the default URL. Note that the URL has to be in this way if we wish to use the free domain name given by GitHub Pages. Once the changes are made, save them and type in the following command in terminal at /my_website directory to create static files (HTML+CSS+JS) for your website:</p>
+<pre tabindex="0"><code>cd ~/Desktop/my_directory/my_website/
+hugo
+</code></pre><p>This command will create a /public directory under /my_website directory. The /public directory will have all the HTML, CSS and JS files required for deploying your website.</p>
+<h2 id="3-deployment">3. Deployment</h2>
+<p>Login to your GitHub account and create an empty repository called &ldquo;github_username.github.io&rdquo; using this <a href="https://www.youtube.com/watch?v=LcuzlEv8qRI">guide</a>. The name of the repository has to be in this way to let GitHub know that this repo will used for hosting a static website such that it can automatically create a deployment pipeline to host your website at <a href="https://github_username.github.io/">https://github_username.github.io/</a> URL. Now, you can clone this empty repo on your local machine by opening a terminal and typing the following commands:</p>
+<pre tabindex="0"><code>cd ~/Desktop/my_directory/
+git clone https://github.com/github_username/github_username.github.io.git
+</code></pre><p>Now that you have cloned the deployment repo, you can copy all the static files under /public directory and paste them under your local repo. Once it&rsquo;s done, we are ready to push them to your GitHub repo and deploy your website by typing the following commands:</p>
+<pre tabindex="0"><code>cd github_username.github.io
+git config --global user.name &#34;Your github username here&#34;
+git config --global user.email &#34;Your email address used to your create github profile&#34;
+git add .
+git commit -m &#34;Files added.&#34;
+git push
+</code></pre><p>Both git config commands save the username and email address linked with your GitHub profile. Git add command adds all the files which have been changed since the last checkpoint. Git commit command commits all the changes with your desired commit message and git push command pushes all the local changes to your GitHub repository (this may ask you for your GitHub credentials, so just type them and hit Enter). Now open your GitHub repo and see if there is a green tick mark right beside your commit message. If you see a yellow dot, that means GitHub Pages pipeline is deploying your website so you need to wait for a minute or two. Once the green tick mark appears, you can open a new browser tab and type <a href="https://github_username.github.io/">https://github_username.github.io/</a> to access your website. And voila, your website has been deployed.</p>
+
+    </div>
+</div>
+
+            </main>
+        </div>
+
+
+        <footer class="footer">
+    
+        <span>© 2023 Poojan Vyas · <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" class="footerLink">CC BY-NC 4.0</a></span>
+    
+</footer>
+    </div>
+
+</body>
+
+</html>
